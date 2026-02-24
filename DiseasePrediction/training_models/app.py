@@ -13,12 +13,9 @@ st.set_page_config(page_title="Prediction of Disease Outbreaks",
 working_dir = os.path.dirname(os.path.abspath(__file__))
 
 # loading the saved models
-
-diabetes_model = pickle.load(open(r'C:\Users\NAYANA\Desktop\Disease Outbreak Prediction\training_models\diabetes_model.sav', 'rb'))
-
-heart_model = pickle.load(open(r'C:\Users\NAYANA\Desktop\Disease Outbreak Prediction\training_models\heart_model.sav', 'rb'))
-
-parkinsons_model = pickle.load(open(r'C:\Users\NAYANA\Desktop\Disease Outbreak Prediction\training_models\parkinsons_model.sav', 'rb'))
+diabetes_model = pickle.load(open(os.path.join(working_dir, 'diabetes_model.sav'), 'rb'))
+heart_model = pickle.load(open(os.path.join(working_dir, 'heart_model.sav'), 'rb'))
+parkinsons_model = pickle.load(open(os.path.join(working_dir, 'parkinsons_model.sav'), 'rb'))
 
 # sidebar for navigation
 with st.sidebar:
@@ -145,7 +142,7 @@ if selected == 'Heart Disease Prediction':
 
         user_input = [float(x) for x in user_input]
 
-        heart_prediction = heart_disease_model.predict([user_input])
+        heart_prediction = heart_model.predict([user_input])
 
         if heart_prediction[0] == 1:
             heart_diagnosis = 'The person is having heart disease'
