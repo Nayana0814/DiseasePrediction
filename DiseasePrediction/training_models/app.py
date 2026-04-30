@@ -8,7 +8,14 @@ st.set_page_config(page_title="Prediction of Disease Outbreaks",
                    layout="wide",
                    page_icon="🧑‍⚕️")
 
-    
+st.markdown("""
+    <style>
+        .main-title {
+            text-align: center;
+        }
+    </style>
+""", unsafe_allow_html=True)
+
 # getting the working directory of the main.py
 working_dir = os.path.dirname(os.path.abspath(__file__))
 
@@ -19,7 +26,7 @@ parkinsons_model = pickle.load(open(os.path.join(working_dir, 'parkinsons_model.
 
 # sidebar for navigation
 with st.sidebar:
-    selected = option_menu('Prediction of Disease Outbreaks System',
+    selected = option_menu('Disease Prediction',
 
                            ['Diabetes Prediction',
                             'Heart Disease Prediction',
@@ -33,7 +40,7 @@ with st.sidebar:
 if selected == 'Diabetes Prediction':
 
     # page title
-    st.title('Diabetes Prediction using ML')
+    st.markdown('<h1 class="main-title">Diabetes Prediction using ML</h1>', unsafe_allow_html=True)
 
     # getting the input data from the user
     col1, col2, col3 = st.columns(3)
@@ -88,7 +95,7 @@ if selected == 'Diabetes Prediction':
 if selected == 'Heart Disease Prediction':
 
     # page title
-    st.title('Heart Disease Prediction using ML')
+    st.markdown('<h1 class="main-title">Heart Disease Prediction using ML</h1>', unsafe_allow_html=True)
 
     col1, col2, col3 = st.columns(3)
 
@@ -155,8 +162,8 @@ if selected == 'Heart Disease Prediction':
 if selected == "Parkinsons Prediction":
 
     # page title
-    st.title("Parkinson's Disease Prediction using ML")
-
+    st.markdown('<h1 class="main-title">Parkinson\'s Disease Prediction using ML</h1>', unsafe_allow_html=True)
+  
     col1, col2, col3, col4, col5 = st.columns(5)
 
     with col1:
