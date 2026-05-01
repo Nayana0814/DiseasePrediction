@@ -1,0 +1,23 @@
+artifact_path: file:///C:/Users/NAYANA/Desktop/DiseasePrediction/training_models/mlruns/1/models/m-02aeec4a68c640c6b127bad1fb561f7e/artifacts
+flavors:
+  python_function:
+    env:
+      conda: conda.yaml
+      virtualenv: python_env.yaml
+    loader_module: mlflow.sklearn
+    model_path: model.pkl
+    predict_fn: predict
+    python_version: 3.12.3
+  sklearn:
+    code: null
+    pickled_model: model.pkl
+    serialization_format: cloudpickle
+    sklearn_version: 1.5.2
+    skops_trusted_types: null
+mlflow_version: 3.11.1
+model_id: m-02aeec4a68c640c6b127bad1fb561f7e
+model_size_bytes: 724304
+model_uuid: m-02aeec4a68c640c6b127bad1fb561f7e
+prompts: null
+run_id: 8690c65fb1554a6fbc2eced2306a9da5
+utc_time_created: '2026-05-01 09:12:17.679717'
